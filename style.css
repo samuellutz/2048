@@ -31,8 +31,10 @@ position: relative;
 }
 
 .tile{
-    --x: 1;
-    --y: 2;
+    /* --x: 0;
+    --y: 0;
+    --background-lightness:80%;
+    --text-lightness:20%; */
     position:absolute;
     display: flex;
     justify-content: center;
@@ -41,6 +43,18 @@ position: relative;
     height: var(--cell-size);
     background-color: red;
     border-radius: 1vmin;
-    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)));
-    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)));
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    font-weight: bold;
+    background-color: hsl(200, 50%, var(--background-lightness));
+    color: hsl(200, 25%, var(--text-lightness));
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes show{
+    0% {
+        opacity: .5;
+        transform: scale(0);
+    }
 }
