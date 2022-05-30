@@ -14,16 +14,29 @@ export default class Grid{
             return new Cell(cellEl , index % GRID_SIZE, Math.floor(index / GRID_SIZE))
         })
     }
+
+    get #emptycells() {
+        return this.#cells.filter(cell => cell.tile == null)
+    }
+
+    randomEmptyCell() {
+        const randomIndex = Math.floor(Math.random() *this.#emptycells.length)
+        return this.#emptycells[randomIndex]
+    }
 }
 
 class Cell {
     #cellEl
     #x
     #y
+    #tile
     constructor(cellEl, x, y){
         this.#cellEl = cellEl
         this.#x = x
         this.#y = y
+    }
+    get tile(){
+        return this.#tile
     }
 }
 
