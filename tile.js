@@ -11,6 +11,8 @@ export default class Tile {
         this.value = value
     }
 
+    get value() { return this.#value}
+
     set value(v){
         this.#value = v
         this.#tileEl.textContent = v
@@ -33,5 +35,11 @@ export default class Tile {
 
     remove() {
         this.#tileEl.remove()
+      }
+
+      waitForTransition(){
+          return new Promise((resolve) => {
+              this.#tileEl.addEventListener("transitionend",resolve, {once: true})
+          })
       }
 }
