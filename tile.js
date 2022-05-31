@@ -30,4 +30,8 @@ export default class Tile {
         this.#y = value
         this.#tileEl.style.setProperty("--y", value)
     }
+
+    remove() {
+        this.#tileEl.remove()
+      }
 }
