@@ -1,5 +1,5 @@
-# [2048] (https://samuellutz.github.io/2048/)
-
+# [2048](https://samuellutz.github.io/2048/)
+[flappy-clone](https://samuellutz.github.io/flappy-clone/)
 
 A game on trying to get on the the tiles to 2048.
 
